@@ -1,0 +1,69 @@
+# Create a comprehensive .gitignore for Python/ML projects
+cat > .gitignore << EOF
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Poetry
+poetry.lock
+# Don't ignore pyproject.toml - we need this!
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large datasets (don't push data to GitHub)
+datasets/*.csv
+datasets/*.json
+!datasets/README.md
+
+# Models
+*.pkl
+*.model
+*.h5
+EOF
+
+# Update your README.md
+cat > README.md << EOF
+# Machine Learning Zoomcamp
+
+My journey through the [Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) by Alexey Grigorev.
+
+## Project Structure
+
+- `01-intro/` - Introduction to Machine Learning
+- `02-regression/` - Machine Learning for Regression
+- `03-classification/` - Machine Learning for Classification
+- `04-evaluation/` - Evaluation Metrics for Classification
+- `05-deployment/` - Deploying Machine Learning Models
+- `06-ensemble/` - Decision Trees and Ensemble Learning
+- `07-nn/` - Neural Networks and Deep Learning
+- `08-serverless/` - Serverless Deep Learning
+- `09-k8s/` - Kubernetes and TensorFlow Serving
+- `10-kubeflow/` - Kubernetes and Kubeflow
+- `projects/` - Capstone and other projects
+- `datasets/` - Data files (gitignored)
+- `notes/` - Study notes and documentation
+- `scripts/` - Utility scripts
+
+## Setup
+
+\`\`\`bash
+# Using Poetry for dependency management
+poetry install
+poetry shell
+\`\`\`
+EOF
